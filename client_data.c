@@ -21,10 +21,14 @@ void * client_handle(void* cd){
 
     sleep(1);    
 
-    ticks = time(NULL);
-    snprintf(sendBuff, sizeof(sendBuff), "%.24s\r\n", ctime(&ticks));
+    const char* http_response = "HTTP/1.0 200 OK\r\n"
+                                "Content-Type: text/plain\r\n"
+                                "Content-Length: 12\r\n"
+                                "\r\n"
+                                "Hello, World!";
+
         
-    send(client->socket_code, sendBuff, strlen(sendBuff)+1, 0);
+    send(client->socket_code, http_response, strlen(http_response), 0);
 
     close(client->socket_code);
 
