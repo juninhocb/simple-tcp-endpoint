@@ -1,0 +1,12 @@
+.vscode/
+.idea
+*.iws
+*.iml
+*.ipr
+
+*.o
+*.out
+*.obj
+
+*.exe
+*.app
