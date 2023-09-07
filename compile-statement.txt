@@ -1,0 +1,2 @@
+//links myserver with the client_data binary
+gcc -o myserver main0.9_thread.c client_data.c -lpthread
